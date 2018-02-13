@@ -1,0 +1,6 @@
+framework module DPSideMenu {
+  umbrella header "DPSideMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

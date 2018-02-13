@@ -30,10 +30,10 @@
 /* Begin PBXFileReference section */
 		10F42E897463B2B632EA7E2E /* Pods-DPSideMenu_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPSideMenu_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DPSideMenu_Example/Pods-DPSideMenu_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		1557542B829314CD10BF3A3D /* Pods_DPSideMenu_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPSideMenu_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DF763CEA085606F68D86D9C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1DF763CEA085606F68D86D9C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		217DA3D61276998A2B46BA8F /* Pods-DPSideMenu_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPSideMenu_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DPSideMenu_Example/Pods-DPSideMenu_Example.release.xcconfig"; sourceTree = "<group>"; };
 		297EF01797C93146851C1A2A /* Pods-DPSideMenu_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPSideMenu_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DPSideMenu_Tests/Pods-DPSideMenu_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		394ADADB66C0D1ABE6A980B2 /* DPSideMenu.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = DPSideMenu.podspec; path = ../DPSideMenu.podspec; sourceTree = "<group>"; };
+		394ADADB66C0D1ABE6A980B2 /* DPSideMenu.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DPSideMenu.podspec; path = ../DPSideMenu.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3C1E104E03AAC8C8B9482CC5 /* Pods_DPSideMenu_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPSideMenu_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* DPSideMenu_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPSideMenu_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		607FACE51AFB9204008FA782 /* DPSideMenu_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DPSideMenu_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6F62348EBF100B6810700252 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		6F62348EBF100B6810700252 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		AD1A7013E8E48C536FA96967 /* Pods-DPSideMenu_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPSideMenu_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DPSideMenu_Tests/Pods-DPSideMenu_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,10 +215,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = CC8LGG6TEP;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = CC8LGG6TEP;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -522,10 +524,12 @@
 			baseConfigurationReference = 10F42E897463B2B632EA7E2E /* Pods-DPSideMenu_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CC8LGG6TEP;
 				INFOPLIST_FILE = DPSideMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.danielma.dpframeworks.DPSideMenu-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -537,10 +541,12 @@
 			baseConfigurationReference = 217DA3D61276998A2B46BA8F /* Pods-DPSideMenu_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CC8LGG6TEP;
 				INFOPLIST_FILE = DPSideMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.danielma.dpframeworks.DPSideMenu-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -551,6 +557,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD1A7013E8E48C536FA96967 /* Pods-DPSideMenu_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = CC8LGG6TEP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -572,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 297EF01797C93146851C1A2A /* Pods-DPSideMenu_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = CC8LGG6TEP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

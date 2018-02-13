@@ -1,0 +1,22 @@
+{
+  "name": "DPSideMenu",
+  "version": "0.1.0",
+  "summary": "A short description of DPSideMenu.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/danielpluvia/DPSideMenu",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "danielpluvia": "danielpluvia@outlook.com"
+  },
+  "source": {
+    "git": "https://github.com/danielpluvia/DPSideMenu.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "DPSideMenu/Classes/**/*"
+}

@@ -1,0 +1,22 @@
+PODS:
+  - DPSideMenu (0.1.0)
+  - Nimble (7.0.3)
+  - Quick (1.2.0)
+
+DEPENDENCIES:
+  - DPSideMenu (from `../`)
+  - Nimble (~> 7.0.2)
+  - Quick (~> 1.2.0)
+
+EXTERNAL SOURCES:
+  DPSideMenu:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DPSideMenu: 23b7a865d3582f5972683fb49af5f47f477adb61
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+
+PODFILE CHECKSUM: f19e4d4b92e0a6cf623ea32c45bc7368501fd479
+
+COCOAPODS: 1.4.0

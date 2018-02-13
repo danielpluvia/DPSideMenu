@@ -3,7 +3,7 @@
 //  DPSideMenu
 //
 //  Created by danielpluvia on 02/13/2018.
-//  Copyright (c) 2018 danielpluvia. All rights reserved.
+//  Copyright (c) 2018 Daniel Ma. All rights reserved.
 //
 
 import UIKit
