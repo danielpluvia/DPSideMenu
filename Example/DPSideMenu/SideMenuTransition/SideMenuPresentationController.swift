@@ -2,6 +2,9 @@
 //  SideMenuPresentationController.swift
 //  DPSideMenu
 //
+//  This class is for managing the dimming view, resizing the presented view and
+//  determing the final frame of the presented view.
+//
 //  Created by Xueqiang Ma on 13/2/18.
 //
 
@@ -11,6 +14,7 @@ class SideMenuPresentationController: UIPresentationController {
     var dimmingView: UIView = UIView()
     var direction: SideMenuPresentationManager.PresentationDirection = .left
     
+    // Position of the presented view in the container view by the end of the presentation transition.
     override var frameOfPresentedViewInContainerView: CGRect {
         var frame: CGRect = .zero
         if let containerSize = self.containerView?.bounds.size {

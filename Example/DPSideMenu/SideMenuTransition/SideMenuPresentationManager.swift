@@ -16,20 +16,26 @@ public class SideMenuPresentationManager: NSObject {
     }
     
     var direction: PresentationDirection = .left
-    
 }
 
 extension SideMenuPresentationManager: UIViewControllerTransitioningDelegate {
-    public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let presentationController = SideMenuPresentationController(presentedViewController: presented, presenting: presenting)
+    public func presentationController(forPresented presented: UIViewController,
+                                       presenting: UIViewController?,
+                                       source: UIViewController) -> UIPresentationController? {
+        let presentationController = SideMenuPresentationController(presentedViewController: presented,
+                                                                    presenting: presenting)
         return presentationController
     }
     
-    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return SideMenuPresentationAnimator(isPresentation: true, direction: self.direction)
+    public func animationController(forPresented presented: UIViewController,
+                                    presenting: UIViewController,
+                                    source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SideMenuPresentationAnimator(isPresentation: true,
+                                            direction: self.direction)
     }
     
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return SideMenuPresentationAnimator(isPresentation: false, direction: self.direction)
+        return SideMenuPresentationAnimator(isPresentation: false,
+                                            direction: self.direction)
     }
 }
