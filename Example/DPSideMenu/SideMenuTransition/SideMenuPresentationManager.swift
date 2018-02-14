@@ -24,9 +24,9 @@ public class SideMenuPresentationManager: NSObject {
         super.init()
     }
     
-    deinit {
-        print("SideMenuPresentationManager deinited")
-    }
+    //    deinit {
+    //        print("SideMenuPresentationManager deinited")
+    //    }
 }
 
 extension SideMenuPresentationManager: UIViewControllerTransitioningDelegate {

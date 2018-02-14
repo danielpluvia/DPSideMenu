@@ -41,9 +41,9 @@ class SideMenuPresentationController: UIPresentationController {
         self.setupDimmingView()
     }
     
-    deinit {
-        print("SideMenuPresentationController: deinited")
-    }
+    //    deinit {
+    //        print("SideMenuPresentationController: deinited")
+    //    }
 }
 
 fileprivate extension SideMenuPresentationController {
@@ -107,15 +107,18 @@ fileprivate extension SideMenuPresentationController {
         case .began:
             self.presentedViewController.dismiss(animated: true, completion: nil)
         case .changed:
-            interactionController.update(percent)
-        case .ended:
+            if interactionController.percentComplete > 0.5 {
+                recognizer.isEnabled = false
+            } else {
+                interactionController.update(percent)
+            }
+        case .ended, .cancelled:
+            recognizer.isEnabled = true
             if interactionController.percentComplete > 0.25 {
                 interactionController.finish()
             } else {
                 interactionController.cancel()
             }
-        case .cancelled:
-            interactionController.cancel()
         default:
             break
         }
