@@ -11,16 +11,32 @@ import DPSideMenu
 
 class ViewController: UIViewController {
     
-    lazy var sideMenuTransitioningDelegate = SideMenuPresentationManager()
+    lazy var sideMenuTransitioningDelegate = SideMenuPresentationManager(direction: .right)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addGesture()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+}
+
+extension ViewController {
+    func addGesture() {
+        let screenEdgeRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(self.handlePanGesture(_:)))
+        screenEdgeRecognizer.edges = .left
+        self.view.addGestureRecognizer(screenEdgeRecognizer)
+    }
+    
+    @objc
+    dynamic func handlePanGesture(_ recognizer: UIPanGestureRecognizer) {
+        if recognizer.state == .began {
+            self.performSegue(withIdentifier: "ShowMenuSegue", sender: self)
+        }
+    }
 }
 
 extension ViewController {

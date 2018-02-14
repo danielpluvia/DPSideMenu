@@ -12,7 +12,8 @@ import UIKit
 
 class SideMenuPresentationController: UIPresentationController {
     var dimmingView: UIView = UIView()
-    var direction: SideMenuPresentationManager.PresentationDirection = .left
+    var direction: SideMenuPresentationManager.PresentationDirection
+    var interactionController: UIPercentDrivenInteractiveTransition?
     
     // Position of the presented view in the container view by the end of the presentation transition.
     override var frameOfPresentedViewInContainerView: CGRect {
@@ -32,9 +33,16 @@ class SideMenuPresentationController: UIPresentationController {
         return frame
     }
     
-    override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
+    init(presentedViewController: UIViewController,
+                  presenting presentingViewController: UIViewController?,
+                  direction: SideMenuPresentationManager.PresentationDirection) {
+        self.direction = direction
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
         self.setupDimmingView()
+    }
+    
+    deinit {
+        print("SideMenuPresentationController: deinited")
     }
 }
 
@@ -52,6 +60,52 @@ fileprivate extension SideMenuPresentationController {
     @objc func handleTap(recognizer: UITapGestureRecognizer) {
         self.presentedViewController.dismiss(animated: true) {
             
+        }
+    }
+}
+
+fileprivate extension SideMenuPresentationController {
+    func addDismissGesture(to view: UIView) {
+        self.interactionController = UIPercentDrivenInteractiveTransition()
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture(_:)))
+        view.addGestureRecognizer(panGesture)
+    }
+    
+    @objc
+    dynamic func handlePanGesture(_ recognizer: UIPanGestureRecognizer) {
+        guard let interactionController = self.interactionController else {return}
+        let translate = recognizer.translation(in: recognizer.view)
+        var percent: CGFloat = interactionController.percentComplete
+        switch self.direction {
+        case .top:
+            break
+        case .bottom:
+            break
+        case .left:
+            percent = translate.x / recognizer.view!.bounds.size.width
+            if percent > 0.0 {
+                percent = fmin(percent, interactionController.percentComplete)
+            } else {
+                percent = percent.magnitude
+            }
+        case .right:
+            percent = translate.x / recognizer.view!.bounds.size.width
+            if percent < 0.0 {
+                percent = fmin(percent.magnitude, interactionController.percentComplete)
+            }
+        }
+        
+        switch recognizer.state {
+        case .began:
+            self.presentedViewController.dismiss(animated: true, completion: nil)
+        case .changed:
+            interactionController.update(percent)
+        case .ended:
+            interactionController.finish()
+        case .cancelled:
+            interactionController.cancel()
+        default:
+            break
         }
     }
 }
@@ -79,7 +133,8 @@ extension SideMenuPresentationController {
     }
     
     override func presentationTransitionDidEnd(_ completed: Bool) {
-        
+        self.addDismissGesture(to: self.presentedView!)
+        self.addDismissGesture(to: self.dimmingView)
     }
     
     override func dismissalTransitionWillBegin() {
@@ -93,7 +148,7 @@ extension SideMenuPresentationController {
     }
     
     override func dismissalTransitionDidEnd(_ completed: Bool) {
-        
+        super.dismissalTransitionDidEnd(completed)
     }
     
     override func size(forChildContentContainer container: UIContentContainer,

@@ -17,6 +17,10 @@ class SideMenuPresentationAnimator: NSObject {
         self.direction = direction
         super.init()
     }
+    
+    deinit {
+        //        print("SideMenuPresentationAnimator: deinited")
+    }
 }
 
 extension SideMenuPresentationAnimator: UIViewControllerAnimatedTransitioning {
@@ -30,7 +34,7 @@ extension SideMenuPresentationAnimator: UIViewControllerAnimatedTransitioning {
             let containerView = transitionContext.containerView
             let presentedFrame = transitionContext.finalFrame(for: presentedViewController)
             var initialFrame = presentedFrame
-            var finialFrame = presentedFrame
+            let finialFrame = presentedFrame
             switch direction {
             case .top:
                 break
@@ -38,11 +42,10 @@ extension SideMenuPresentationAnimator: UIViewControllerAnimatedTransitioning {
                 break
             case .left:
                 initialFrame.origin.x = containerView.frame.origin.x - presentedFrame.size.width
-                finialFrame.origin.x = containerView.frame.origin.x
                 initialFrame.origin.y = containerView.frame.origin.y
-                finialFrame.origin.y = containerView.frame.origin.y
             case .right:
-                break
+                initialFrame.origin.x = containerView.frame.size.width + presentedFrame.size.width
+                initialFrame.origin.y = containerView.frame.origin.y
             }
             transitionContext.containerView.addSubview(presentedView)
             presentedView.frame = initialFrame
@@ -55,7 +58,7 @@ extension SideMenuPresentationAnimator: UIViewControllerAnimatedTransitioning {
             guard let dismissedViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from), let dismissedView = dismissedViewController.view else { return }
             let containerView = transitionContext.containerView
             let dismissedFrame = transitionContext.finalFrame(for: dismissedViewController)
-            var initialFrame = dismissedFrame
+            let initialFrame = dismissedFrame
             var finialFrame = dismissedFrame
             switch direction {
             case .top:
@@ -63,12 +66,11 @@ extension SideMenuPresentationAnimator: UIViewControllerAnimatedTransitioning {
             case .bottom:
                 break
             case .left:
-                initialFrame.origin.x = dismissedFrame.origin.x
                 finialFrame.origin.x = containerView.frame.origin.x - dismissedFrame.size.width
-                initialFrame.origin.y = dismissedFrame.origin.y
                 finialFrame.origin.y = dismissedFrame.origin.y
             case .right:
-                break
+                finialFrame.origin.x = containerView.frame.size.width + dismissedFrame.size.width
+                finialFrame.origin.y = dismissedFrame.origin.y
             }
             dismissedView.frame = initialFrame
             UIView.animate(withDuration: self.duration, animations: {
