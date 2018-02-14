@@ -10,7 +10,7 @@ import UIKit
 class SideMenuPresentationAnimator: NSObject {
     var isPresentation: Bool
     var direction: SideMenuPresentationManager.PresentationDirection
-    fileprivate let duration: TimeInterval = 0.3
+    fileprivate let duration: TimeInterval = 0.6
     
     init(isPresentation: Bool, direction: SideMenuPresentationManager.PresentationDirection) {
         self.isPresentation = isPresentation
@@ -37,9 +37,11 @@ extension SideMenuPresentationAnimator: UIViewControllerAnimatedTransitioning {
             let finialFrame = presentedFrame
             switch direction {
             case .top:
-                break
+                initialFrame.origin.y = containerView.frame.origin.y - presentedFrame.size.height
+                initialFrame.origin.x = containerView.frame.origin.x
             case .bottom:
-                break
+                initialFrame.origin.y = containerView.frame.size.height + presentedFrame.size.height
+                initialFrame.origin.x = containerView.frame.origin.x
             case .left:
                 initialFrame.origin.x = containerView.frame.origin.x - presentedFrame.size.width
                 initialFrame.origin.y = containerView.frame.origin.y
@@ -49,10 +51,16 @@ extension SideMenuPresentationAnimator: UIViewControllerAnimatedTransitioning {
             }
             transitionContext.containerView.addSubview(presentedView)
             presentedView.frame = initialFrame
-            UIView.animate(withDuration: self.duration, animations: {
-                presentedView.frame = finialFrame
-            }, completion: { (finished) in
-                transitionContext.completeTransition(finished)
+            UIView.animate(withDuration: self.duration,
+                           delay: 0.0,
+                           usingSpringWithDamping: 0.0,
+                           initialSpringVelocity: 0.0,
+                           options: [.curveEaseInOut],
+                           animations: {
+                            presentedView.frame = finialFrame
+            },
+                           completion: { (finished) in
+                            transitionContext.completeTransition(finished)
             })
         } else {
             guard let dismissedViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from), let dismissedView = dismissedViewController.view else { return }
@@ -62,9 +70,11 @@ extension SideMenuPresentationAnimator: UIViewControllerAnimatedTransitioning {
             var finialFrame = dismissedFrame
             switch direction {
             case .top:
-                break
+                finialFrame.origin.y = containerView.frame.origin.y - dismissedFrame.size.height
+                finialFrame.origin.x = dismissedFrame.origin.x
             case .bottom:
-                break
+                finialFrame.origin.y = containerView.frame.size.height + dismissedFrame.size.height
+                finialFrame.origin.x = dismissedFrame.origin.x
             case .left:
                 finialFrame.origin.x = containerView.frame.origin.x - dismissedFrame.size.width
                 finialFrame.origin.y = dismissedFrame.origin.y
@@ -73,10 +83,16 @@ extension SideMenuPresentationAnimator: UIViewControllerAnimatedTransitioning {
                 finialFrame.origin.y = dismissedFrame.origin.y
             }
             dismissedView.frame = initialFrame
-            UIView.animate(withDuration: self.duration, animations: {
-                dismissedView.frame = finialFrame
-            }, completion: { (finished) in
-                transitionContext.completeTransition(finished)
+            UIView.animate(withDuration: self.duration,
+                           delay: 0.0,
+                           usingSpringWithDamping: 0.0,
+                           initialSpringVelocity: 0.0,
+                           options: [.curveEaseInOut],
+                           animations: {
+                            dismissedView.frame = finialFrame
+            },
+                           completion: { (finished) in
+                            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             })
         }
     }

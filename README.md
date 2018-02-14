@@ -22,7 +22,7 @@ pod 'DPSideMenu'
 
 ## Author
 
-danielpluvia, danielpluvia@outlook.com
+Daniel Ma
 
 ## License
 

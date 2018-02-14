@@ -78,9 +78,17 @@ fileprivate extension SideMenuPresentationController {
         var percent: CGFloat = interactionController.percentComplete
         switch self.direction {
         case .top:
-            break
+            percent = translate.y / recognizer.view!.bounds.size.height
+            if percent > 0.0 {
+                percent = fmin(percent, interactionController.percentComplete)
+            } else {
+                percent = percent.magnitude
+            }
         case .bottom:
-            break
+            percent = translate.y / recognizer.view!.bounds.size.height
+            if percent < 0.0 {
+                percent = fmin(percent.magnitude, interactionController.percentComplete)
+            }
         case .left:
             percent = translate.x / recognizer.view!.bounds.size.width
             if percent > 0.0 {
@@ -101,7 +109,11 @@ fileprivate extension SideMenuPresentationController {
         case .changed:
             interactionController.update(percent)
         case .ended:
-            interactionController.finish()
+            if interactionController.percentComplete > 0.25 {
+                interactionController.finish()
+            } else {
+                interactionController.cancel()
+            }
         case .cancelled:
             interactionController.cancel()
         default:

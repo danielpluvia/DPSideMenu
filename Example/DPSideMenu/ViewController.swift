@@ -27,7 +27,7 @@ class ViewController: UIViewController {
 extension ViewController {
     func addGesture() {
         let screenEdgeRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(self.handlePanGesture(_:)))
-        screenEdgeRecognizer.edges = .left
+        screenEdgeRecognizer.edges = .right
         self.view.addGestureRecognizer(screenEdgeRecognizer)
     }
     
