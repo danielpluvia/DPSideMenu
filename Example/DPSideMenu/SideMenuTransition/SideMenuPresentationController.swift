@@ -107,7 +107,7 @@ fileprivate extension SideMenuPresentationController {
         case .began:
             self.presentedViewController.dismiss(animated: true, completion: nil)
         case .changed:
-            if interactionController.percentComplete > 0.5 {
+            if interactionController.percentComplete > 0.6 {
                 recognizer.isEnabled = false
             } else {
                 interactionController.update(percent)
