@@ -34,7 +34,7 @@ extension SideMenuPresentationAnimator: UIViewControllerAnimatedTransitioning {
         transitionContext.containerView.addSubview(view)
         let containerView = transitionContext.containerView
         let presentedFrame = transitionContext.finalFrame(for: controller)                      // The frame of presentedView that presented finally,
-                                                                                                //      equals to frameOfPresentedViewInContainerView in SideMenuPresentationController
+        //      equals to frameOfPresentedViewInContainerView in SideMenuPresentationController
         var dismissedFrame = presentedFrame                                                     // The frame of presentedView after dismissed
         switch direction {
         case .top:
@@ -52,7 +52,7 @@ extension SideMenuPresentationAnimator: UIViewControllerAnimatedTransitioning {
         }
         var initialFrame = presentedFrame
         var finalFrame = presentedFrame
-        var options: UIViewAnimationOptions = []
+        var options: UIView.AnimationOptions = []
         if isPresentation {
             initialFrame = dismissedFrame
             finalFrame = presentedFrame
@@ -63,14 +63,15 @@ extension SideMenuPresentationAnimator: UIViewControllerAnimatedTransitioning {
             options = [.curveEaseOut]
         }
         view.frame = initialFrame
-        UIView.animate(withDuration: self.duration,
-                       delay: 0.0,
-                       options: options,
-                       animations: {
-                        view.frame = finalFrame
+        UIView.animate(
+            withDuration: self.duration,
+            delay: 0.0,
+            options: options,
+            animations: {
+                view.frame = finalFrame
         },
-                       completion: { (finished) in
-                        transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            completion: { (finished) in
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         })
     }
 }

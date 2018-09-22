@@ -43,7 +43,7 @@ extension ViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowMenuSegue" {
             let dest = segue.destination
-            dest.transitioningDelegate = self.sideMenuTransitioningDelegate
+            dest.transitioningDelegate = self.sideMenuTransitioningDelegate // Key Code
             dest.modalPresentationStyle = .custom
         }
     }

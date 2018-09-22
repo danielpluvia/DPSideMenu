@@ -1,4 +1,5 @@
 use_frameworks!
+platform :ios, '11.0'
 
 target 'DPSideMenu_Example' do
   pod 'DPSideMenu', :path => '../'
@@ -6,7 +7,7 @@ target 'DPSideMenu_Example' do
   target 'DPSideMenu_Tests' do
     inherit! :search_paths
 
-    pod 'Quick', '~> 1.2.0'
-    pod 'Nimble', '~> 7.0.2'
+    pod 'Quick'
+    pod 'Nimble'
   end
 end
