@@ -1,4 +1,4 @@
-# DPSideMenu
+# DPSideMenu: Side Menu for Swift
 
 [![CI Status](http://img.shields.io/travis/danielpluvia/DPSideMenu.svg?style=flat)](https://travis-ci.org/danielpluvia/DPSideMenu)
 [![Version](https://img.shields.io/cocoapods/v/DPSideMenu.svg?style=flat)](http://cocoapods.org/pods/DPSideMenu)
@@ -27,3 +27,13 @@ Daniel Ma
 ## License
 
 DPSideMenu is available under the MIT license. See the LICENSE file for more info.
+
+## Fonts
+
+Chinese Font: PingFang SC (Medium)
+
+English Font: System (Medium)
+
+## References
+
+* [Custom UIViewController Transitions: Getting Started](https://www.raywenderlich.com/322-custom-uiviewcontroller-transitions-getting-started)

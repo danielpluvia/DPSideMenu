@@ -40,7 +40,6 @@
 		35FA3142AD56265A2F77361FD284800C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD0F5DAA0AC84C5E3ADE087C20B50BA /* Foundation.framework */; };
 		372ED4C0A29418874A790AD965EEE7BB /* QuickTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724936C5CBAA73277C3E13592468E48 /* QuickTestSuite.swift */; };
 		37677CF7642DE842A5E6D17F32D0AB00 /* CwlMachBadInstructionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E03B9AEB9E1FEAC2380CA17B174F1D3C /* CwlMachBadInstructionHandler.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		392FB77F43EC585272169B92016C4450 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C924E82CC2E7A592B4A3BABB189F87 /* ReplaceMe.swift */; };
 		3A9E05346C86B76996B00476136E02F9 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DEF90C4A0D703BDE1E1820CA7B165 /* Match.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		3DD565E4A02EB0EF26F4C6F87800EFA8 /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5830341EC905720C113A6F76E375ADF /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		40A171EDCB95C2F32A957676476A25BC /* DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 42CE60C662D9A1382B4BF26914AC82D0 /* DSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,6 +53,10 @@
 		5D535FED8ED72214166DCCD71F788A6A /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DA4BF9133F99980EE1F24776FA260 /* Async.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		60C63BAE9B169996E25981C9E61BB1BA /* QuickSelectedTestSuiteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44F3D3A37B288BF6DEC9D3074ED626A /* QuickSelectedTestSuiteBuilder.swift */; };
 		639D9C4EF1D73184DD1D0EA86B2AAF93 /* Await.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336E11B7F8854A9118FB070A9E34CF78 /* Await.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		650E816721562531008BCFA4 /* DPSideMenuInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E816621562531008BCFA4 /* DPSideMenuInteractionController.swift */; };
+		6564C77A2157D10C00903485 /* DPSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564C7792157D10C00903485 /* DPSideMenu.swift */; };
+		6564C77F2157D1C300903485 /* DPSideMenuDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564C77E2157D1C300903485 /* DPSideMenuDismissAnimationController.swift */; };
+		6564C7812157D1E200903485 /* DPSideMenuPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564C7802157D1E200903485 /* DPSideMenuPresentAnimationController.swift */; };
 		65D047318E010F73717D8D3A1010BDC0 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598EE7A1FE76D77BE0FC75EDEF3299C1 /* Closures.swift */; };
 		6673029A1E9ABDD79109176F30780C41 /* CwlBadInstructionException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B10C2CFD2B4D759CF041A45CF58FF2 /* CwlBadInstructionException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		67566C50176EC4B7F657E83C73DCAB94 /* NSString+C99ExtendedIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F6A12075FF0A33C70898ECC8A145B /* NSString+C99ExtendedIdentifier.swift */; };
@@ -200,7 +203,6 @@
 		3E391020BDC676707DD5EB5991A77C38 /* DPSideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPSideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB72EE755307D2502E70A6B529B73EC /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/QuickObjectiveC/QuickSpec.h; sourceTree = "<group>"; };
 		40B0D6DAF878C0575A7176DE205BBAF1 /* Pods-DPSideMenu_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DPSideMenu_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		42C924E82CC2E7A592B4A3BABB189F87 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = DPSideMenu/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		42CE60C662D9A1382B4BF26914AC82D0 /* DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSL.h; path = Sources/NimbleObjectiveC/DSL.h; sourceTree = "<group>"; };
 		48FB816DE4B6A4BFDD305F58A6472925 /* ThrowAssertion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowAssertion.swift; path = Sources/Nimble/Matchers/ThrowAssertion.swift; sourceTree = "<group>"; };
 		4ADDE4EA63584E9BF3933026B32B66E2 /* Nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-dummy.m"; sourceTree = "<group>"; };
@@ -222,6 +224,10 @@
 		5FF5498ACD8246B3B1EC6CBFCAD4C8D7 /* Quick-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-prefix.pch"; sourceTree = "<group>"; };
 		60B070F60A08FF5EF7CF3D1A69143000 /* NMBExpectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBExpectation.swift; path = Sources/Nimble/Adapters/NMBExpectation.swift; sourceTree = "<group>"; };
 		63BAD0DA551276454D9ACE719DEFCEB1 /* DSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSL.m; path = Sources/NimbleObjectiveC/DSL.m; sourceTree = "<group>"; };
+		650E816621562531008BCFA4 /* DPSideMenuInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPSideMenuInteractionController.swift; sourceTree = "<group>"; };
+		6564C7792157D10C00903485 /* DPSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DPSideMenu.swift; path = DPSideMenu/Classes/DPSideMenu.swift; sourceTree = "<group>"; };
+		6564C77E2157D1C300903485 /* DPSideMenuDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPSideMenuDismissAnimationController.swift; sourceTree = "<group>"; };
+		6564C7802157D1E200903485 /* DPSideMenuPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPSideMenuPresentAnimationController.swift; sourceTree = "<group>"; };
 		660D7D4C3B82FFD945DFA23D0C1C6A9E /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		6708E82D864D86CC9A66E3A038B6FDB9 /* ExampleHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleHooks.swift; path = Sources/Quick/Hooks/ExampleHooks.swift; sourceTree = "<group>"; };
 		6F09E00015A51CF7CCAC20DF7144AE44 /* URL+FileName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+FileName.swift"; path = "Sources/Quick/URL+FileName.swift"; sourceTree = "<group>"; };
@@ -477,6 +483,24 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
+		650E816021562036008BCFA4 /* Interaction Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				650E816621562531008BCFA4 /* DPSideMenuInteractionController.swift */,
+			);
+			path = "Interaction Controllers";
+			sourceTree = "<group>";
+		};
+		6564C77B2157D13000903485 /* Animation Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6564C7802157D1E200903485 /* DPSideMenuPresentAnimationController.swift */,
+				6564C77E2157D1C300903485 /* DPSideMenuDismissAnimationController.swift */,
+			);
+			name = "Animation Controllers";
+			path = "DPSideMenu/Classes/Animation Controllers";
+			sourceTree = "<group>";
+		};
 		7075138D66C0D9A3319AE46A1E36C711 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,9 +579,11 @@
 		B105CF568E4C3659035D272EF6B3D1CC /* DPSideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				42C924E82CC2E7A592B4A3BABB189F87 /* ReplaceMe.swift */,
+				6564C7792157D10C00903485 /* DPSideMenu.swift */,
+				6564C77B2157D13000903485 /* Animation Controllers */,
+				650E816021562036008BCFA4 /* Interaction Controllers */,
+				C1B7C57431F348B1F3A09E9BD0264347 /* OLD_SideMenuTransition */,
 				8ED0CC5544560CCFAA40869BBD1AA0A3 /* Pod */,
-				C1B7C57431F348B1F3A09E9BD0264347 /* SideMenuTransition */,
 				7075138D66C0D9A3319AE46A1E36C711 /* Support Files */,
 			);
 			name = DPSideMenu;
@@ -641,15 +667,15 @@
 			path = Nimble;
 			sourceTree = "<group>";
 		};
-		C1B7C57431F348B1F3A09E9BD0264347 /* SideMenuTransition */ = {
+		C1B7C57431F348B1F3A09E9BD0264347 /* OLD_SideMenuTransition */ = {
 			isa = PBXGroup;
 			children = (
 				CE290F57228B9C1F98616554A6429D74 /* SideMenuPresentationAnimator.swift */,
 				D7032D1275D44F1C1139D63D0915CA28 /* SideMenuPresentationController.swift */,
 				1FC8224BFB86DBE63B821445E8FED3FB /* SideMenuPresentationManager.swift */,
 			);
-			name = SideMenuTransition;
-			path = DPSideMenu/Classes/SideMenuTransition;
+			name = OLD_SideMenuTransition;
+			path = DPSideMenu/Classes/OLD_SideMenuTransition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -840,9 +866,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6564C7812157D1E200903485 /* DPSideMenuPresentAnimationController.swift in Sources */,
 				2F23C0C2827CC2AAA7C8DC7B805EFEAA /* DPSideMenu-dummy.m in Sources */,
-				392FB77F43EC585272169B92016C4450 /* ReplaceMe.swift in Sources */,
+				6564C77A2157D10C00903485 /* DPSideMenu.swift in Sources */,
 				7F1DA06A23046FC14AD46129F5D4F651 /* SideMenuPresentationAnimator.swift in Sources */,
+				650E816721562531008BCFA4 /* DPSideMenuInteractionController.swift in Sources */,
+				6564C77F2157D1C300903485 /* DPSideMenuDismissAnimationController.swift in Sources */,
 				EBA7E43CF9882CB311B250D7A9978D98 /* SideMenuPresentationController.swift in Sources */,
 				256CA61C86E33210DD6F0E6CCF5CAE6B /* SideMenuPresentationManager.swift in Sources */,
 			);
