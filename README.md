@@ -7,9 +7,9 @@
 
 ## Note
 
-The most tricky part is how to store the reference of interactiveTransition and pass it to interactionControllerForDismissal(:) method.
+The most tricky part is how to store the reference of `interactiveTransition` and pass it to `interactionControllerForDismissal(:)` method.
 
-You MUST NOT store a strong reference of presentationController in the UIViewControllerTransitioningDelegate class, or it will cause a problem of retain cycle. Thus, we use a weak reference of interactiveTransition to point to the real interactiveTransition which is stored in presentationController.
+You MUST NOT store a strong reference of `presentationController` in the `UIViewControllerTransitioningDelegate` class, or it will cause a problem of retain cycle. Thus, we use a weak reference of `interactiveTransition` to point to the real interactiveTransition which is stored in `presentationController`.
 
 Here is the deinit order:
 
@@ -45,13 +45,3 @@ Daniel Ma
 ## License
 
 DPSideMenu is available under the MIT license. See the LICENSE file for more info.
-
-## Fonts
-
-Chinese Font: PingFang SC (Medium)
-
-English Font: System (Medium)
-
-## References
-
-* [Custom UIViewController Transitions: Getting Started](https://www.raywenderlich.com/322-custom-uiviewcontroller-transitions-getting-started)
