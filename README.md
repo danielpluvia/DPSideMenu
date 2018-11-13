@@ -38,6 +38,25 @@ it, simply add the following line to your Podfile:
 pod 'DPSideMenu'
 ```
 
+## Usage
+
+```swift
+import DPSideMenu
+class ViewController: UIViewController {
+
+lazy var slideInTransitioningDelegate = DPSlideInMenuPresentationManager()
+
+@objc func didTapMenuBtn() {
+    let menuController = MenuViewController()
+    slideInTransitioningDelegate.direction = .leftToRight
+    menuController.transitioningDelegate = slideInTransitioningDelegate
+    menuController.modalPresentationStyle = .custom
+    present(menuController, animated: true, completion: nil)
+}
+
+}
+```
+
 ## Author
 
 Daniel Ma
