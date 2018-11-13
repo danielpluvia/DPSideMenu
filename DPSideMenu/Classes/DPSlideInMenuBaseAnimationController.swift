@@ -9,9 +9,7 @@
 import UIKit
 
 class DPSlideInMenuBaseAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
-    deinit {
-        print("\(self)")
-    }
+
     let duration = 0.3
     var direction: DPSlideInMenuPresentationManager.PresentationDirection
     

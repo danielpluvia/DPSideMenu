@@ -9,12 +9,9 @@
 import UIKit
 
 class DPSlideInMenuPresentationController: UIPresentationController {
-    deinit {
-        print("\(self)")
-    }
+
     fileprivate var direction: DPSlideInMenuPresentationManager.PresentationDirection
     var interactiveTransition: DPSlideInMenuDismissInteractiveTransition?
-    
     /// Set final frame's size and position
     override public var frameOfPresentedViewInContainerView: CGRect {
         var frame: CGRect = .zero
@@ -44,8 +41,8 @@ class DPSlideInMenuPresentationController: UIPresentationController {
          presenting presentingViewController: UIViewController?,
          direction: DPSlideInMenuPresentationManager.PresentationDirection) {
         self.direction = direction
-        self.interactiveTransition = DPSlideInMenuDismissInteractiveTransition(presentedVC: presentedViewController, direction: direction)
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
+        interactiveTransition = DPSlideInMenuDismissInteractiveTransition(presentedVC: presentedViewController, direction: direction)
     }
     
     @objc func didTapDimmingView(_ recognizer: UITapGestureRecognizer) {
@@ -75,13 +72,11 @@ extension DPSlideInMenuPresentationController {
     }
     
     override func presentationTransitionDidEnd(_ completed: Bool) {
-        guard completed else {
+        guard completed, let containerView = containerView else {
             dimmingView.removeFromSuperview()
             return
         }
-        if let containerView = containerView {
-            interactiveTransition?.addGesture(to: containerView) // Add a dismiss pan gesture to the containerView
-        }
+        interactiveTransition?.attachGesture(to: containerView)
     }
     
     override func dismissalTransitionWillBegin() {
@@ -97,8 +92,6 @@ extension DPSlideInMenuPresentationController {
             return
         }
         dimmingView.removeFromSuperview()
-        presentedView?.removeFromSuperview()
-        presentedViewController.removeFromParent()
     }
     
     override func containerViewWillLayoutSubviews() {

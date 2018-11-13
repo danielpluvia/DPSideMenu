@@ -41,9 +41,7 @@ extension DPSlideInMenuDismissInteractiveTransition {
 }
 
 class DPSlideInMenuDismissInteractiveTransition: UIPercentDrivenInteractiveTransition {
-    deinit {
-        print("\(self)")
-    }
+
     var isInteracting: Bool = false
     weak var presentedVC: UIViewController?   // This is the menuVC
     fileprivate var direction: DPSlideInMenuPresentationManager.PresentationDirection   // refers to how the menu opened
@@ -57,7 +55,7 @@ class DPSlideInMenuDismissInteractiveTransition: UIPercentDrivenInteractiveTrans
         super.init()
     }
     
-    func addGesture(to view: UIView) {
+    func attachGesture(to view: UIView) {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         view.addGestureRecognizer(panGesture)
     }

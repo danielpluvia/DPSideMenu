@@ -21,27 +21,27 @@ public class DPSlideInMenuPresentationManager: NSObject {
         super.init()
     }
     
-    deinit {
-        print("\(self)")
-    }
-    
     public var direction: PresentationDirection = .leftToRight
-    var presentationController: DPSlideInMenuPresentationController? = nil  // Hold a reference so that interactionControllerForDismissal(using:) can access interactive transition within the presentationController
+    fileprivate weak var interactiveTransition: DPSlideInMenuDismissInteractiveTransition?
+    // Warning: MUST NOT holding a strong reference of presentationController here, or it will cause retain cycle. Thus, we use a weak reference of interactiveTransition to point to the real interactiveTransition which is stored in presentationController.
     
 }
 
 extension DPSlideInMenuPresentationManager: UIViewControllerTransitioningDelegate {
-
+    
     public func presentationController(forPresented presented: UIViewController,
-                                presenting: UIViewController?,
-                                source: UIViewController) -> UIPresentationController? {
-        presentationController = DPSlideInMenuPresentationController(presentedViewController: presented,
-                                                                     presenting: presenting,
-                                                                     direction: direction)
+                                       presenting: UIViewController?,
+                                       source: UIViewController) -> UIPresentationController? {
+        let presentationController =  DPSlideInMenuPresentationController(presentedViewController: presented,
+                                                   presenting: presenting,
+                                                   direction: direction)
+        self.interactiveTransition = presentationController.interactiveTransition
         return presentationController
     }
     
-    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forPresented presented: UIViewController,
+                                    presenting: UIViewController,
+                                    source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return DPSlideInMenuPresentAnimationController(direction: .leftToRight)
     }
     
@@ -50,9 +50,7 @@ extension DPSlideInMenuPresentationManager: UIViewControllerTransitioningDelegat
     }
     
     public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        guard let interactiveTransition = presentationController?.interactiveTransition else {
-            return nil
-        }
+        guard let interactiveTransition = interactiveTransition else { return nil }
         return interactiveTransition.isInteracting ? interactiveTransition : nil
     }
 }

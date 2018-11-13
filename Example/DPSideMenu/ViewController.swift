@@ -11,11 +11,7 @@ import DPSideMenu
 
 class ViewController: UIViewController {
     
-    deinit {
-        print("\(self)")
-    }
-    
-    var slideInTransitioningDelegate = DPSlideInMenuPresentationManager()
+    lazy var slideInTransitioningDelegate = DPSlideInMenuPresentationManager()
     
     fileprivate let menuBtn: UIButton = {
         let btn = UIButton()
@@ -54,7 +50,7 @@ class ViewController: UIViewController {
     }
     
     @objc func didTapMenuBtn() {
-        let menuController = UIViewController()
+        let menuController = MenuViewController()
         menuController.view.backgroundColor = .white
         menuController.view.translatesAutoresizingMaskIntoConstraints = false
         slideInTransitioningDelegate.direction = .leftToRight
