@@ -19,9 +19,9 @@ class DPSlideInMenuPresentationController: UIPresentationController {
                           withParentContainerSize: containerView!.bounds.size)
         switch direction {
         case .rightToLeft:
-            frame.origin.x = containerView!.frame.width * (1.0/3.0)
+            frame.origin.x = containerView!.frame.width - frame.width
         case .bottomToTop:
-            frame.origin.y = containerView!.frame.width * (1.0/3.0)
+            frame.origin.y = containerView!.frame.height - frame.height
         default:
             break
         }
@@ -102,9 +102,9 @@ extension DPSlideInMenuPresentationController {
                        withParentContainerSize parentSize: CGSize) -> CGSize {
         switch direction {
         case .leftToRight, .rightToLeft:
-            return CGSize(width: parentSize.width * 2.0 / 3.0, height: parentSize.height)
+            return CGSize(width: min(parentSize.width * 2.0 / 3.0, 300), height: parentSize.height)
         case .topToBottom, .bottomToTop:
-            return CGSize(width: parentSize.width, height: parentSize.height * 2.0 / 3.0)
+            return CGSize(width: parentSize.width, height: min(parentSize.height * 2.0 / 3.0, 300))
         }
     }
     
