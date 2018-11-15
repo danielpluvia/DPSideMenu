@@ -42,11 +42,11 @@ extension DPSlideInMenuPresentationManager: UIViewControllerTransitioningDelegat
     public func animationController(forPresented presented: UIViewController,
                                     presenting: UIViewController,
                                     source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return DPSlideInMenuPresentAnimationController(direction: .leftToRight)
+        return DPSlideInMenuPresentAnimationController(direction: direction)
     }
     
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return DPSlideInMenuDismissAnimationController(direction: .leftToRight)
+        return DPSlideInMenuDismissAnimationController(direction: direction)
     }
     
     public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
