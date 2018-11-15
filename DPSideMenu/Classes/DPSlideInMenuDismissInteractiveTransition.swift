@@ -134,25 +134,24 @@ class DPSlideInMenuDismissInteractiveTransition: UIPercentDrivenInteractiveTrans
             break
         }
         if progress < 0.4 {
-            if progress < 0.1 {
-                completionSpeed = 0.05  // slow the animation down
+            if progress < 0.14 {
+                completionSpeed = 0.31  // slow the animation down
+                completionCurve = .linear
             } else {
-                completionSpeed = 0.12  // slow the animation down
+                completionSpeed = 0.42  // slow the animation down
+                completionCurve = .easeOut
             }
             cancel()
+            progress = 0
         } else {
             finish()
+            progress = 1
         }
-        progress = 1
-    }
-    
-    override func cancel() {
-        
-        super.cancel()
     }
     
     override func finish() {
-        completionSpeed = 0.3  // slow the animation down
+        completionCurve = .easeOut
+        completionSpeed = 0.6  // slow the animation down
         super.finish()
     }
 }

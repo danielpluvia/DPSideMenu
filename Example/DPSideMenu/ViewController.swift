@@ -20,13 +20,6 @@ class ViewController: UIViewController {
         return btn
     }()
     
-    fileprivate let dismissBtn: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("Dismiss", for: .normal)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
@@ -37,30 +30,15 @@ class ViewController: UIViewController {
             menuBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             menuBtn.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             ])
-        menuBtn.addTarget(self, action: #selector(didTapMenuBtn), for: .touchUpInside)
-        
-        view.addSubview(dismissBtn)
-        NSLayoutConstraint.activate([
-            dismissBtn.widthAnchor.constraint(equalToConstant: 80),
-            dismissBtn.heightAnchor.constraint(equalToConstant: 40),
-            dismissBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            dismissBtn.topAnchor.constraint(equalTo: menuBtn.bottomAnchor, constant: 100)
-            ])
-        dismissBtn.addTarget(self, action: #selector(didTapDismissBtn), for: .touchUpInside)
+        menuBtn.addTarget(self, action: #selector(didTapMenuBtn(_:)), for: .touchUpInside)
     }
     
-    @objc func didTapMenuBtn() {
+    @objc func didTapMenuBtn(_ sender: UIButton) {
         let menuController = MenuViewController()
-        menuController.view.backgroundColor = .white
-        menuController.view.translatesAutoresizingMaskIntoConstraints = false
         slideInTransitioningDelegate.direction = .leftToRight
         menuController.transitioningDelegate = slideInTransitioningDelegate
         menuController.modalPresentationStyle = .custom
         present(menuController, animated: true, completion: nil)
-    }
-    
-    @objc func didTapDismissBtn() {
-        dismiss(animated: true, completion: nil)
     }
     
 }

@@ -54,7 +54,7 @@ class DPSlideInMenuPresentationController: UIPresentationController {
 extension DPSlideInMenuPresentationController {
     
     override func presentationTransitionWillBegin() {
-        guard let containerView = containerView, let coordinator = presentingViewController.transitionCoordinator else {return}
+        guard let containerView = containerView, let coordinator = presentedViewController.transitionCoordinator else {return}
         
         // Add dimmingView into the containerView and palce it beyond the presenting view and below the presented view
         containerView.addSubview(dimmingView)
@@ -80,7 +80,7 @@ extension DPSlideInMenuPresentationController {
     }
     
     override func dismissalTransitionWillBegin() {
-        guard let coordinator = presentingViewController.transitionCoordinator else {return}
+        guard let coordinator = presentedViewController.transitionCoordinator else {return}
         coordinator.animate(alongsideTransition: { (context) in
             self.dimmingView.alpha = 0
         }, completion: nil)

@@ -34,7 +34,7 @@ class DPSlideInMenuDismissAnimationController: DPSlideInMenuBaseAnimationControl
         presentedVC.view.transform = .identity
         UIView.animate(withDuration: transitionDuration(using: transitionContext),
                        delay: 0,
-                       options: .curveLinear,
+                       options: .curveEaseOut,
                        animations: {
                         presentedVC.view.transform = transform
         }) { (isFinished) in

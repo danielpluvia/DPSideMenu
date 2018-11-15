@@ -52,6 +52,12 @@
 		5D535FED8ED72214166DCCD71F788A6A /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DA4BF9133F99980EE1F24776FA260 /* Async.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		60C63BAE9B169996E25981C9E61BB1BA /* QuickSelectedTestSuiteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44F3D3A37B288BF6DEC9D3074ED626A /* QuickSelectedTestSuiteBuilder.swift */; };
 		639D9C4EF1D73184DD1D0EA86B2AAF93 /* Await.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336E11B7F8854A9118FB070A9E34CF78 /* Await.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		652DA8A0219D50A40010D123 /* DPSlideInMenuContentPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DA89F219D50A40010D123 /* DPSlideInMenuContentPresentationManager.swift */; };
+		652DA8A2219D51260010D123 /* DPSlideInMenuContentPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DA8A1219D51260010D123 /* DPSlideInMenuContentPresentAnimationController.swift */; };
+		652DA8A4219D513E0010D123 /* DPSlideInMenuContentDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DA8A3219D513E0010D123 /* DPSlideInMenuContentDismissAnimationController.swift */; };
+		652DA8A7219D67320010D123 /* DPSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DA8A6219D67320010D123 /* DPSideMenuViewController.swift */; };
+		652DA8A9219D67520010D123 /* DPSideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DA8A8219D67520010D123 /* DPSideMenuHeaderView.swift */; };
+		652DA8AB219D67640010D123 /* DPSideMenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DA8AA219D67640010D123 /* DPSideMenuItemCell.swift */; };
 		6577FD0F219AAB0E00C10061 /* DPSlideInMenuPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577FD0E219AAB0E00C10061 /* DPSlideInMenuPresentationManager.swift */; };
 		6577FD19219AAC5800C10061 /* DPSlideInMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577FD18219AAC5800C10061 /* DPSlideInMenuPresentationController.swift */; };
 		6577FD1B219AAC8D00C10061 /* DPSlideInMenuBaseAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577FD1A219AAC8D00C10061 /* DPSlideInMenuBaseAnimationController.swift */; };
@@ -222,6 +228,12 @@
 		5FF5498ACD8246B3B1EC6CBFCAD4C8D7 /* Quick-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-prefix.pch"; sourceTree = "<group>"; };
 		60B070F60A08FF5EF7CF3D1A69143000 /* NMBExpectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBExpectation.swift; path = Sources/Nimble/Adapters/NMBExpectation.swift; sourceTree = "<group>"; };
 		63BAD0DA551276454D9ACE719DEFCEB1 /* DSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSL.m; path = Sources/NimbleObjectiveC/DSL.m; sourceTree = "<group>"; };
+		652DA89F219D50A40010D123 /* DPSlideInMenuContentPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DPSlideInMenuContentPresentationManager.swift; path = DPSideMenu/Classes/DPSlideInMenuContentPresentationManager.swift; sourceTree = "<group>"; };
+		652DA8A1219D51260010D123 /* DPSlideInMenuContentPresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DPSlideInMenuContentPresentAnimationController.swift; path = DPSideMenu/Classes/DPSlideInMenuContentPresentAnimationController.swift; sourceTree = "<group>"; };
+		652DA8A3219D513E0010D123 /* DPSlideInMenuContentDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DPSlideInMenuContentDismissAnimationController.swift; path = DPSideMenu/Classes/DPSlideInMenuContentDismissAnimationController.swift; sourceTree = "<group>"; };
+		652DA8A6219D67320010D123 /* DPSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DPSideMenuViewController.swift; path = DPSideMenu/Classes/DPSideMenuViewController.swift; sourceTree = "<group>"; };
+		652DA8A8219D67520010D123 /* DPSideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DPSideMenuHeaderView.swift; path = DPSideMenu/Classes/DPSideMenuHeaderView.swift; sourceTree = "<group>"; };
+		652DA8AA219D67640010D123 /* DPSideMenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DPSideMenuItemCell.swift; path = DPSideMenu/Classes/DPSideMenuItemCell.swift; sourceTree = "<group>"; };
 		6577FD0E219AAB0E00C10061 /* DPSlideInMenuPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DPSlideInMenuPresentationManager.swift; path = DPSideMenu/Classes/DPSlideInMenuPresentationManager.swift; sourceTree = "<group>"; };
 		6577FD18219AAC5800C10061 /* DPSlideInMenuPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DPSlideInMenuPresentationController.swift; path = DPSideMenu/Classes/DPSlideInMenuPresentationController.swift; sourceTree = "<group>"; };
 		6577FD1A219AAC8D00C10061 /* DPSlideInMenuBaseAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DPSlideInMenuBaseAnimationController.swift; path = DPSideMenu/Classes/DPSlideInMenuBaseAnimationController.swift; sourceTree = "<group>"; };
@@ -481,12 +493,24 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
+		652DA8A5219D67180010D123 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				652DA8A6219D67320010D123 /* DPSideMenuViewController.swift */,
+				652DA8A8219D67520010D123 /* DPSideMenuHeaderView.swift */,
+				652DA8AA219D67640010D123 /* DPSideMenuItemCell.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
 		6577FD10219AAB9600C10061 /* Animation Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				6577FD1A219AAC8D00C10061 /* DPSlideInMenuBaseAnimationController.swift */,
 				6577FD1C219AAC9C00C10061 /* DPSlideInMenuPresentAnimationController.swift */,
 				6577FD1E219AACB200C10061 /* DPSlideInMenuDismissAnimationController.swift */,
+				652DA8A1219D51260010D123 /* DPSlideInMenuContentPresentAnimationController.swift */,
+				652DA8A3219D513E0010D123 /* DPSlideInMenuContentDismissAnimationController.swift */,
 			);
 			name = "Animation Controllers";
 			sourceTree = "<group>";
@@ -585,7 +609,9 @@
 		B105CF568E4C3659035D272EF6B3D1CC /* DPSideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				652DA8A5219D67180010D123 /* Menu */,
 				6577FD0E219AAB0E00C10061 /* DPSlideInMenuPresentationManager.swift */,
+				652DA89F219D50A40010D123 /* DPSlideInMenuContentPresentationManager.swift */,
 				6577FD17219AAC1600C10061 /* Presentation Controller */,
 				6577FD10219AAB9600C10061 /* Animation Controllers */,
 				6577FD12219AABB600C10061 /* Interaction Controllers */,
@@ -865,9 +891,15 @@
 				2F23C0C2827CC2AAA7C8DC7B805EFEAA /* DPSideMenu-dummy.m in Sources */,
 				6577FD1F219AACB200C10061 /* DPSlideInMenuDismissAnimationController.swift in Sources */,
 				6577FD1B219AAC8D00C10061 /* DPSlideInMenuBaseAnimationController.swift in Sources */,
+				652DA8A2219D51260010D123 /* DPSlideInMenuContentPresentAnimationController.swift in Sources */,
 				6577FD0F219AAB0E00C10061 /* DPSlideInMenuPresentationManager.swift in Sources */,
 				6577FD1D219AAC9C00C10061 /* DPSlideInMenuPresentAnimationController.swift in Sources */,
+				652DA8A4219D513E0010D123 /* DPSlideInMenuContentDismissAnimationController.swift in Sources */,
+				652DA8AB219D67640010D123 /* DPSideMenuItemCell.swift in Sources */,
 				6577FD19219AAC5800C10061 /* DPSlideInMenuPresentationController.swift in Sources */,
+				652DA8A0219D50A40010D123 /* DPSlideInMenuContentPresentationManager.swift in Sources */,
+				652DA8A7219D67320010D123 /* DPSideMenuViewController.swift in Sources */,
+				652DA8A9219D67520010D123 /* DPSideMenuHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
