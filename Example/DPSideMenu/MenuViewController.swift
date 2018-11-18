@@ -9,7 +9,7 @@
 import UIKit
 import DPSideMenu
 
-class MenuViewController: DPSideMenuViewController {
+class MenuViewController: DPSideMenuViewController, UITableViewDelegate, UITableViewDataSource {
     
     fileprivate let cells: [String] = [
         "Following",
@@ -32,7 +32,6 @@ class MenuViewController: DPSideMenuViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        clearsSelectionOnViewWillAppear = true
         // Do any additional setup after loading the view.
         tableView.register(DPSideMenuItemCell.self, forCellReuseIdentifier: "cellId")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "separatorCellId")
@@ -58,21 +57,15 @@ class MenuViewController: DPSideMenuViewController {
 }
 
 extension MenuViewController {
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = DPSideMenuHeaderView()
-        headerView.setTitle(title: "More")
-        return headerView
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cells.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if cells[indexPath.row] == "-separator-" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "separatorCellId", for: indexPath)
             let separator = UIView()
@@ -96,7 +89,7 @@ extension MenuViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let newVC = UIViewController()
         newVC.view.backgroundColor = .white
         let nav = UINavigationController(rootViewController: newVC)

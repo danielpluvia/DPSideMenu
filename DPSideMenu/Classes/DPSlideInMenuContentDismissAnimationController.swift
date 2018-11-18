@@ -36,7 +36,7 @@ class DPSlideInMenuContentDismissAnimationController: NSObject, UIViewController
                        options: .curveLinear,
                        animations: {
                         presentedVC.view.transform = CGAffineTransform(translationX: containerView.frame.width, y: 0)
-                        presentingVC.view.transform = .identity
+                        presentingVC.view.transform = .identity // Warning: This will cause potition problem if the user rotates the device
         }) { (isFinished) in
             transitionContext.completeTransition(isFinished && !transitionContext.transitionWasCancelled)
         }
