@@ -18,7 +18,7 @@ open class DPSideMenuViewController: UIViewController {
         setupTableView()
     }
     
-    fileprivate func setupHeaderView() {
+    open func setupHeaderView() {
         headerView = DPSideMenuHeaderView(frame: .zero)
         view.addSubview(headerView)
         headerView.setTitle(title: "More")

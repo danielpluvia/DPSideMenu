@@ -28,7 +28,7 @@ class MenuViewController: DPSideMenuViewController, UITableViewDelegate, UITable
     ]
     
     lazy var contentTransitioningDelegate = DPSlideInMenuContentPresentationManager()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
