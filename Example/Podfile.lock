@@ -1,27 +1,16 @@
 PODS:
-  - DPSideMenu (0.0.1)
-  - Nimble (7.3.1)
-  - Quick (1.3.2)
+  - DPSideMenu (0.1.3)
 
 DEPENDENCIES:
   - DPSideMenu (from `../`)
-  - Nimble
-  - Quick
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Nimble
-    - Quick
 
 EXTERNAL SOURCES:
   DPSideMenu:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DPSideMenu: 866c0400c716415dc71f9dc53b434909e84bb347
-  Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
-  Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
+  DPSideMenu: 94da11f580f568fc059a0176094de305fdcf299b
 
-PODFILE CHECKSUM: 4ce1c0cfa973ddbf14730ab7d8d7272dfaa554b8
+PODFILE CHECKSUM: 3c7dea2962b3327add1622d7dd02c208f44dc5c8
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0
